@@ -921,25 +921,34 @@
     border-radius: 12px;
     padding: 32px;
     position: relative;
-  }
   .cta-form::before {
-    content: '';
-    position: absolute;
-    top: -1px; left: 24px; right: 24px;
-    height: 2px;
-    background: linear-gradient(90deg, var(--accent-orange), var(--accent-yellow));
-  }
-  .form-title {
-    font-family: 'Archivo Black', sans-serif;
-    font-size: 22px;
-    margin-bottom: 6px;
-  }
-  .form-subtitle {
-    color: #888;
-    font-size: 13px;
-    margin-bottom: 24px;
-    font-family: 'JetBrains Mono', monospace;
-  }
+  content: '';
+  position: absolute;
+  top: -1px; left: 24px; right: 24px;
+  height: 2px;
+  background: linear-gradient(90deg, var(--accent-orange), var(--accent-yellow));
+}
+.form-title {
+  font-family: 'Archivo Black', sans-serif;
+  font-size: 22px;
+  margin-bottom: 6px;
+}
+.form-label .req { 
+  color: var(--accent-orange); 
+  margin-left: 2px;
+}
+.form-required-note { 
+  font-size: 11px; 
+  color: #888; 
+  margin-bottom: 20px; 
+  font-family: 'JetBrains Mono', monospace; 
+}
+.form-subtitle {
+  color: #888;
+  font-size: 13px;
+  margin-bottom: 24px;
+  font-family: 'JetBrains Mono', monospace;
+}
   .form-group {
     margin-bottom: 16px;
   }
@@ -1878,25 +1887,26 @@
     <form class="cta-form" id="cs-leadform" action="https://xtratech.us18.list-manage.com/subscribe/post?u=859ff0560bf14ca6c051f7f8e&amp;id=4774a6baa8&amp;f_id=0017abe6f0" method="post" target="_blank" novalidate>
       <div class="form-title">Visszahívást kérek</div>
       <div class="form-subtitle">// 30 másodperc alatt kitölthető</div>
+      <div class="form-required-note"><span class="req" style="color:var(--accent-orange)">*</span> A csillaggal jelölt mezők kötelezőek</div>
 
       <div class="form-group">
-        <label class="form-label" for="mce-LNAME">Vezetékneved</label>
+        <label class="form-label" for="mce-LNAME">Vezetékneved<span class="req">*</span></label>
         <input type="text" name="LNAME" id="mce-LNAME" class="form-input" placeholder="Kovács" required>
       </div>
       <div class="form-group">
-        <label class="form-label" for="mce-FNAME">Keresztneved</label>
+        <label class="form-label" for="mce-FNAME">Keresztneved<span class="req">*</span></label>
         <input type="text" name="FNAME" id="mce-FNAME" class="form-input" placeholder="János" required>
       </div>
       <div class="form-group">
-        <label class="form-label" for="mce-EMAIL">E-mail címed</label>
+        <label class="form-label" for="mce-EMAIL">E-mail címed<span class="req">*</span></label>
         <input type="email" name="EMAIL" id="mce-EMAIL" class="form-input" placeholder="janos@example.hu" required>
       </div>
       <div class="form-group">
-        <label class="form-label" for="mce-PHONE">Telefonszámod</label>
+        <label class="form-label" for="mce-PHONE">Telefonszámod<span class="req">*</span></label>
         <input type="text" name="PHONE" id="mce-PHONE" class="form-input" placeholder="+36 30 123 4567" required>
       </div>
       <div class="form-group">
-        <label class="form-label" for="mce-MMERGE18">Melyik telephely van hozzád közel?</label>
+        <label class="form-label" for="mce-MMERGE18">Melyik telephely van hozzád közel?<span class="req">*</span></label>
         <select name="MMERGE18" id="mce-MMERGE18" class="form-select" required>
           <option value="">Válassz…</option>
           <option value="Újhartyán">Újhartyán (központ)</option>
@@ -1909,7 +1919,7 @@
         </select>
       </div>
       <div class="form-group">
-        <label class="form-label" for="mce-MMERGE19">Mi érdekel?</label>
+        <label class="form-label" for="mce-MMERGE19">Mi érdekel?<span class="req">*</span></label>
         <select name="MMERGE19" id="mce-MMERGE19" class="form-select" required>
           <option value="">Válassz…</option>
           <option value="Az egész akció érdekel">Az egész akció érdekel</option>
@@ -1929,6 +1939,7 @@
       </div>
 
       <div id="cs-form-error" class="form-error" role="alert"></div>
+      
 
       <button type="submit" name="subscribe" class="form-submit">Visszahívást kérek →</button>
 
