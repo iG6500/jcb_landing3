@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Júniusi Alkatrészakció — Chemical-Seed</title>
+<title>Júniusi Alkatrészakció — Chemical Seed</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
@@ -1026,6 +1026,86 @@
   }
   .form-phone-num:hover { color: #ffd24d; }
 
+  /* Form hibaüzenet */
+  .form-error {
+    display: none;
+    margin-top: 4px;
+    margin-bottom: 12px;
+    padding: 10px 14px;
+    background: rgba(232, 93, 31, 0.12);
+    border: 1px solid rgba(232, 93, 31, 0.4);
+    border-radius: 4px;
+    color: #f0a079;
+    font-size: 13px;
+    line-height: 1.5;
+  }
+  .form-error.visible { display: block; }
+
+  /* Köszönő panel */
+  .cta-thankyou {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 420px;
+  }
+  .cta-thankyou[hidden] { display: none; }
+  .thankyou-check {
+    color: var(--accent-yellow);
+    margin-bottom: 20px;
+    animation: thankyou-pop 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+  }
+  @keyframes thankyou-pop {
+    0% { transform: scale(0); opacity: 0; }
+    100% { transform: scale(1); opacity: 1; }
+  }
+  .thankyou-title {
+    font-family: 'Archivo Black', sans-serif;
+    font-size: 26px;
+    color: var(--text-light);
+    margin-bottom: 12px;
+    letter-spacing: -0.01em;
+  }
+  .thankyou-text {
+    font-size: 15px;
+    color: #c5c5c5;
+    line-height: 1.6;
+    max-width: 340px;
+    margin-bottom: 24px;
+  }
+  .thankyou-text strong { color: var(--accent-yellow); font-weight: 700; }
+  .thankyou-sub {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    color: #888;
+    margin-bottom: 8px;
+  }
+  .thankyou-again {
+    margin-top: 28px;
+    background: transparent;
+    border: 1.5px solid #444;
+    color: #aaa;
+    padding: 12px 24px;
+    border-radius: 4px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    font-size: 13px;
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+  .thankyou-again:hover {
+    border-color: var(--accent-yellow);
+    color: var(--accent-yellow);
+  }
+
+  /* Beküldés alatti gomb-állapot */
+  .form-submit:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    transform: none;
+  }
+
   /* ========== FOOTER ========== */
   .footer {
     background: #050505;
@@ -1278,7 +1358,7 @@
         </div>
         <div class="product-info">
           <div class="product-category">Merch · JCB</div>
-          <div class="product-name">Sapka Fekete JCB</div>
+          <div class="product-name">Sapka fekete JCB</div>
           <div class="product-sku">Cikkszám: JCB3004</div>
           <div class="product-price-row">
             <span class="product-price-original">2.794 Ft</span>
@@ -1340,7 +1420,7 @@
         </div>
         <div class="product-info">
           <div class="product-category">Gumiabroncs · Ascenso</div>
-          <div class="product-name">460/70R24 PR 159A8/B Betonmintás</div>
+          <div class="product-name">460/70R24 PR 159A8/B betonmintás</div>
           <div class="product-sku">Cikkszám: 8904365504482</div>
           <div class="product-price-row">
             <span class="product-price-original">203.000 Ft</span>
@@ -1682,7 +1762,7 @@
         <div class="product-info">
           <div class="product-category">Gépalkatrész</div>
           <div class="product-name">Kaszapenge bal/jobb</div>
-          <div class="product-sku">Cikkszám: 55903210, 55903310, K6801410, K6801420, K6804710, K6804720</div>
+          <div class="product-sku">Cikkszám: 55903210, 55903310, K6801410, K6801420, K6804710, K6804720.</div>
           <div class="product-price-row">
             <span class="product-price-original">608 Ft</span>
             <span class="product-price-discount">-88 Ft</span>
@@ -1715,15 +1795,15 @@
       <div class="why-card">
         <div class="why-card-num">35<sup>év</sup></div>
         <h3>1990 óta<br>a földeken</h3>
-        <p>Vetőmaggal és növényvédelemmel kezdtük még a rendszerváltáskor — ma már gépekkel, alkatrészekkel és szervizzel is itt vagyunk a gazdák mellett. Nem most kezdtük, és nem is most fogjuk abbahagyni.</p>
+        <p>Vetőmaggal és növényvédelemmel kezdtük még a rendszerváltáskor — ma már gépekkel, alkatrészekkel és szervízzel is itt vagyunk a gazdák mellett. Nem most kezdtük, és nem is most fogjuk abbahagyni.</p>
       </div>
       <div class="why-card">
         <div class="why-card-num">3<sup>brand</sup></div>
         <h3>Hivatalos<br>márkaképviselet</h3>
-        <p>A műszaki üzletágunk a JCB, Kuhn és Joskin hivatalos magyarországi forgalmazója. Eredeti alkatrészt kapsz, gyári garanciával — semmi kompromisszum.</p>
+        <p>Az XTRAtech műszaki üzletágunk a JCB, Kuhn, Joskin és Kubota hivatalos magyarországi forgalmazója. Eredeti alkatrészt kapsz, gyári garanciával — semmi kompromisszum.</p>
       </div>
       <div class="why-card">
-        <div class="why-card-num">6<sup>telephely</sup></div>
+        <div class="why-card-num">6<sup>tel.</sup></div>
         <h3>Hat telephely<br>az ország minden táján</h3>
         <p>Az újhartyáni központ mellett Békésen, Jászfényszarun, Kabán, Kaposváron és Pápán is megtaláltok minket. A legközelebbi raktár szinte sosincs egy óránál messzebb.</p>
       </div>
@@ -1795,45 +1875,62 @@
       </div>
     </div>
 
-    <form class="cta-form" onsubmit="event.preventDefault(); alert('Köszönjük! Munkanapokon 24 órán belül visszahívunk.');">
+    <form class="cta-form" id="cs-leadform" action="https://xtratech.us18.list-manage.com/subscribe/post?u=859ff0560bf14ca6c051f7f8e&amp;id=4774a6baa8&amp;f_id=0017abe6f0" method="post" target="_blank" novalidate>
       <div class="form-title">Visszahívást kérek</div>
       <div class="form-subtitle">// 30 másodperc alatt kitölthető</div>
 
       <div class="form-group">
-        <label class="form-label">A neved</label>
-        <input type="text" class="form-input" placeholder="Kovács János" required>
+        <label class="form-label" for="mce-LNAME">Vezetékneved</label>
+        <input type="text" name="LNAME" id="mce-LNAME" class="form-input" placeholder="Kovács" required>
       </div>
       <div class="form-group">
-        <label class="form-label">Telefonszámod</label>
-        <input type="tel" class="form-input" placeholder="+36 30 123 4567" required>
+        <label class="form-label" for="mce-FNAME">Keresztneved</label>
+        <input type="text" name="FNAME" id="mce-FNAME" class="form-input" placeholder="János" required>
       </div>
       <div class="form-group">
-        <label class="form-label">Melyik telephely van hozzád közel?</label>
-        <select class="form-select">
-          <option>Újhartyán (központ)</option>
-          <option>Békés</option>
-          <option>Jászfényszaru</option>
-          <option>Kaba</option>
-          <option>Kaposvár</option>
-          <option>Pápa</option>
-          <option>Még nem tudom</option>
+        <label class="form-label" for="mce-EMAIL">E-mail címed</label>
+        <input type="email" name="EMAIL" id="mce-EMAIL" class="form-input" placeholder="janos@example.hu" required>
+      </div>
+      <div class="form-group">
+        <label class="form-label" for="mce-PHONE">Telefonszámod</label>
+        <input type="text" name="PHONE" id="mce-PHONE" class="form-input" placeholder="+36 30 123 4567" required>
+      </div>
+      <div class="form-group">
+        <label class="form-label" for="mce-MMERGE18">Melyik telephely van hozzád közel?</label>
+        <select name="MMERGE18" id="mce-MMERGE18" class="form-select" required>
+          <option value="">Válassz…</option>
+          <option value="Újhartyán">Újhartyán (központ)</option>
+          <option value="Békés">Békés</option>
+          <option value="Jászfényszaru">Jászfényszaru</option>
+          <option value="Kaba">Kaba</option>
+          <option value="Kaposvár">Kaposvár</option>
+          <option value="Pápa">Pápa</option>
+          <option value="Még nem tudom">Még nem tudom</option>
         </select>
       </div>
       <div class="form-group">
-        <label class="form-label">Mi érdekel? (opcionális)</label>
-        <select class="form-select">
-          <option>Az egész akció érdekel</option>
-          <option>Kenőanyagok & olajok (Dynatrans, Joskin, AdBlue...)</option>
-          <option>Ascenso gumiabroncsok</option>
-          <option>Elektromos alkatrészek (önindító, akku, érzékelő...)</option>
-          <option>Gépalkatrészek (injektor, kaszapenge...)</option>
-          <option>Szerszám & világítás (LED lámpa, szerszámkészlet)</option>
-          <option>JCB sapka</option>
-          <option>Egyéb — majd elmondom telefonon</option>
+        <label class="form-label" for="mce-MMERGE19">Mi érdekel?</label>
+        <select name="MMERGE19" id="mce-MMERGE19" class="form-select" required>
+          <option value="">Válassz…</option>
+          <option value="Az egész akció érdekel">Az egész akció érdekel</option>
+          <option value="Kenőanyagok &amp; olajok">Kenőanyagok &amp; olajok (Dynatrans, Joskin, AdBlue...)</option>
+          <option value="Gumiabroncsok">Ascenso gumiabroncsok</option>
+          <option value="Elektromos alkatrészek">Elektromos alkatrészek (önindító, akku, érzékelő...)</option>
+          <option value="Gépalkatrészek">Gépalkatrészek (injektor, kaszapenge...)</option>
+          <option value="Szerszám &amp; világítás">Szerszám &amp; világítás (LED lámpa, szerszámkészlet)</option>
+          <option value="Merchandise">JCB sapka / merch</option>
+          <option value="Egyéb">Egyéb — majd elmondom telefonon</option>
         </select>
       </div>
 
-      <button type="submit" class="form-submit">Visszahívást kérek →</button>
+      <!-- Mailchimp bot-csapda: NE töltsd ki, ne töröld, maradjon rejtve -->
+      <div aria-hidden="true" style="position:absolute; left:-5000px;">
+        <input type="text" name="b_859ff0560bf14ca6c051f7f8e_4774a6baa8" tabindex="-1" value="">
+      </div>
+
+      <div id="cs-form-error" class="form-error" role="alert"></div>
+
+      <button type="submit" name="subscribe" class="form-submit">Visszahívást kérek →</button>
 
       <div class="form-divider">VAGY</div>
 
@@ -1842,6 +1939,23 @@
         <a href="tel:+36307108960" class="form-phone-num">+36 30 710 8960</a>
       </div>
     </form>
+
+    <!-- KÖSZÖNŐ PANEL: beküldés után jelenik meg, a form helyén -->
+    <div class="cta-form cta-thankyou" id="cs-thankyou" hidden>
+      <div class="thankyou-check" aria-hidden="true">
+        <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
+          <circle cx="20" cy="20" r="19" stroke="currentColor" stroke-width="2"/>
+          <path d="M12 20.5L17.5 26L28 14.5" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </div>
+      <div class="thankyou-title">Köszönjük, megkaptuk!</div>
+      <p class="thankyou-text">
+        Felvettük az adataidat. Munkanapokon <strong>24 órán belül</strong> visszahív a megfelelő kollégánk a kiválasztott telephelyről.
+      </p>
+      <p class="thankyou-sub">// Sürgős? Hívj minket közvetlenül:</p>
+      <a href="tel:+36307108960" class="form-phone-num">+36 30 710 8960</a>
+      <button type="button" class="thankyou-again" id="cs-form-again">Új érdeklődés küldése</button>
+    </div>
   </div>
 </section>
 
@@ -1912,6 +2026,96 @@
     el.classList.add('fade-in');
     observer.observe(el);
   });
+
+  // ===== Lead form beküldés (Mailchimp, JSONP – az oldal nem tölt újra) =====
+  (function() {
+    const form = document.getElementById('cs-leadform');
+    if (!form) return;
+    const errorBox = document.getElementById('cs-form-error');
+    const thankyou = document.getElementById('cs-thankyou');
+    const submitBtn = form.querySelector('.form-submit');
+    const againBtn = document.getElementById('cs-form-again');
+
+    function showError(msg) {
+      errorBox.innerHTML = msg;
+      errorBox.classList.add('visible');
+    }
+    function clearError() {
+      errorBox.classList.remove('visible');
+      errorBox.innerHTML = '';
+    }
+
+    // JSONP hívás a Mailchimp post-json végpontjára
+    function jsonpSubmit(url, callback) {
+      const cbName = 'mcCallback_' + Date.now();
+      window[cbName] = function(data) {
+        callback(data);
+        delete window[cbName];
+        script.remove();
+      };
+      const script = document.createElement('script');
+      script.src = url + '&c=' + cbName;
+      script.onerror = function() {
+        callback({ result: 'error', msg: 'network' });
+        delete window[cbName];
+        script.remove();
+      };
+      document.body.appendChild(script);
+    }
+
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+      clearError();
+
+      // Kliensoldali ellenőrzés (a böngésző natív üzenetei + saját)
+      if (!form.checkValidity()) {
+        form.reportValidity();
+        return;
+      }
+
+      submitBtn.disabled = true;
+      const origLabel = submitBtn.textContent;
+      submitBtn.textContent = 'Küldés…';
+
+      // Az action URL-t post-json-ra cseréljük a JSONP-hez
+      const actionUrl = form.getAttribute('action').replace('/post?', '/post-json?');
+      const params = new URLSearchParams(new FormData(form)).toString();
+      const url = actionUrl + '&' + params;
+
+      jsonpSubmit(url, function(data) {
+        submitBtn.disabled = false;
+        submitBtn.textContent = origLabel;
+
+        if (data && data.result === 'success') {
+          form.hidden = true;
+          thankyou.hidden = false;
+          thankyou.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        } else {
+          // Mailchimp hibaüzenet (HTML-t adhat vissza), vagy hálózati hiba
+          let msg = (data && data.msg) ? data.msg : '';
+          if (msg === 'network') {
+            msg = 'Hálózati hiba történt. Kérlek próbáld újra, vagy hívj minket telefonon.';
+          } else if (/already subscribed/i.test(msg)) {
+            msg = 'Ezzel az e-mail címmel már jelentkeztél. Hamarosan keresünk! Ha sürgős, hívj minket.';
+          } else if (!msg) {
+            msg = 'Valami nem sikerült. Kérlek ellenőrizd az adatokat, vagy hívj minket telefonon.';
+          }
+          showError(msg);
+        }
+      });
+    });
+
+    // "Új érdeklődés küldése" – visszaállítás
+    if (againBtn) {
+      againBtn.addEventListener('click', function() {
+        form.reset();
+        thankyou.hidden = true;
+        form.hidden = false;
+        clearError();
+        form.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      });
+    }
+  })();
 </script>
 
 </body>
