@@ -688,6 +688,226 @@
   }
   .btn-card-icon:hover { border-color: var(--text-dark); }
 
+  /* ========== MACHINES (JOSKIN gépajánlat) ========== */
+  .machines {
+    background: var(--bg-dark);
+    color: var(--text-light);
+    padding: 90px 5vw;
+    position: relative;
+    overflow: hidden;
+    border-top: 1px solid var(--border-dark);
+  }
+  .machines::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    background-image:
+      radial-gradient(ellipse at 15% 0%, rgba(245,184,0,0.07) 0%, transparent 55%),
+      linear-gradient(rgba(255,255,255,0.02) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px);
+    background-size: auto, 60px 60px, 60px 60px;
+    pointer-events: none;
+  }
+  .machines-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+  }
+  .machines-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    flex-wrap: wrap;
+    gap: 24px;
+    margin-bottom: 48px;
+  }
+  .machines-title-block { max-width: 640px; }
+  .machines h2 {
+    font-family: 'Archivo Black', sans-serif;
+    font-size: clamp(30px, 4.5vw, 54px);
+    line-height: 1;
+    letter-spacing: -0.02em;
+    margin: 14px 0 16px;
+  }
+  .machines h2 em { color: var(--accent-yellow); font-style: italic; }
+  .machines-sub {
+    font-size: clamp(15px, 1.3vw, 17px);
+    color: #b5b5b5;
+    line-height: 1.6;
+  }
+  .machines-sub strong { color: #fff; font-weight: 600; }
+  .machines-phone { flex-shrink: 0; text-align: right; }
+  .machines-phone-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--text-muted-light);
+    margin-bottom: 6px;
+  }
+  .machines-phone a {
+    font-family: 'Archivo Black', sans-serif;
+    font-size: clamp(20px, 2.4vw, 28px);
+    color: var(--accent-yellow);
+    text-decoration: none;
+    white-space: nowrap;
+  }
+  .machines-phone a:hover { color: #ffd24d; }
+
+  .machine-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  .machine-card {
+    display: grid;
+    grid-template-columns: 1.1fr 1fr;
+    background: linear-gradient(135deg, var(--bg-dark-2), #101010);
+    border: 1px solid var(--border-dark);
+    border-radius: 12px;
+    overflow: hidden;
+    transition: border-color 0.3s, transform 0.3s, box-shadow 0.3s;
+  }
+  .machine-card:hover {
+    border-color: var(--accent-yellow);
+    transform: translateY(-3px);
+    box-shadow: 0 16px 40px rgba(0,0,0,0.45);
+  }
+  /* Váltakozó elrendezés: páros kártyáknál a kép a jobb oldalon */
+  .machine-card:nth-child(even) .machine-media { order: 2; }
+
+  .machine-media {
+    position: relative;
+    min-height: 280px;
+    background:
+      radial-gradient(ellipse at center, rgba(245,184,0,0.12) 0%, transparent 62%),
+      #0d0d0d;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    border-right: 1px solid var(--border-dark);
+  }
+  .machine-card:nth-child(even) .machine-media {
+    border-right: none;
+    border-left: 1px solid var(--border-dark);
+  }
+  .machine-media img.machine-photo {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 1;
+  }
+  /* Ha a kép nem tölt be, marad a placeholder rajz */
+  .machine-media img.machine-photo.img-failed { display: none; }
+  .machine-placeholder {
+    color: #3a3a3a;
+    width: 72%;
+    max-width: 340px;
+  }
+  .machine-badge {
+    position: absolute;
+    top: 16px;
+    left: 16px;
+    z-index: 2;
+    background: var(--accent-orange);
+    color: #fff;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 6px 12px;
+    border-radius: 3px;
+  }
+
+  .machine-body {
+    padding: 38px 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .machine-brand {
+    font-family: 'Archivo Black', sans-serif;
+    font-size: 13px;
+    letter-spacing: 0.2em;
+    color: var(--accent-yellow);
+    margin-bottom: 10px;
+  }
+  .machine-name {
+    font-family: 'Archivo Black', sans-serif;
+    font-size: clamp(22px, 2.4vw, 30px);
+    line-height: 1.05;
+    letter-spacing: -0.01em;
+    margin-bottom: 14px;
+    color: var(--text-light);
+  }
+  .machine-spec {
+    font-size: 14px;
+    color: #aaa;
+    line-height: 1.6;
+    margin-bottom: 26px;
+  }
+  .machine-price-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--text-muted-light);
+    display: block;
+    margin-bottom: 4px;
+  }
+  .machine-price {
+    font-family: 'Archivo Black', sans-serif;
+    font-size: clamp(28px, 3.2vw, 40px);
+    color: var(--text-light);
+    line-height: 1;
+    margin-bottom: 28px;
+  }
+  .machine-price span {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 13px;
+    font-weight: 400;
+    color: var(--text-muted-light);
+    letter-spacing: 0.02em;
+  }
+  .machine-actions {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+  .machine-btn {
+    background: linear-gradient(90deg, var(--accent-orange), var(--accent-yellow));
+    color: #1a1a1a;
+    border: none;
+    padding: 14px 26px;
+    border-radius: 4px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    font-size: 14px;
+    cursor: pointer;
+    box-shadow: 0 4px 0 var(--accent-orange-dark);
+    transition: all 0.2s;
+  }
+  .machine-btn:hover { transform: translateY(-2px); box-shadow: 0 6px 0 var(--accent-orange-dark); }
+  .machine-btn:active { transform: translateY(2px); box-shadow: 0 2px 0 var(--accent-orange-dark); }
+  .machine-call {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 13px;
+    color: #ccc;
+    text-decoration: none;
+    border: 1px solid var(--border-dark);
+    padding: 13px 18px;
+    border-radius: 4px;
+    transition: all 0.2s;
+  }
+  .machine-call:hover { border-color: var(--accent-yellow); color: var(--accent-yellow); }
+
   /* ========== WHY US ========== */
   .why {
     background: var(--bg-dark);
@@ -1166,6 +1386,18 @@
     }
     .product-grid { grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); }
     .locations-grid { grid-template-columns: repeat(2, 1fr); }
+
+    /* Gépajánlat kártyák mobilon egymás alá, kép felülre */
+    .machine-card { grid-template-columns: 1fr; }
+    .machine-card:nth-child(even) .machine-media { order: 0; border-left: none; }
+    .machine-media {
+      border-right: none;
+      border-bottom: 1px solid var(--border-dark);
+      min-height: 220px;
+    }
+    .machine-body { padding: 28px 24px; }
+    .machines-header { align-items: flex-start; }
+    .machines-phone { text-align: left; }
   }
 
   @media (max-width: 600px) {
@@ -1173,6 +1405,8 @@
     .locations-grid { grid-template-columns: 1fr; }
     .hero-actions { flex-direction: column; align-items: stretch; }
     .btn-primary, .btn-secondary { justify-content: center; }
+    .machine-actions { flex-direction: column; align-items: stretch; }
+    .machine-call { text-align: center; }
   }
 
   /* Scroll animations */
@@ -1793,6 +2027,119 @@
   </div>
 </section>
 
+<!-- MACHINES / JOSKIN GÉPAJÁNLAT -->
+<section class="machines" id="machines">
+  <div class="machines-inner">
+    <div class="machines-header">
+      <div class="machines-title-block">
+        <div class="section-eyebrow">// Gépajánlat · JOSKIN</div>
+        <h2>Az év legjobb <em>árai</em> pótkocsiból.</h2>
+        <p class="machines-sub">
+          3 oldalra billenthető, forgózsámolyos pótkocsik — kiemelkedő akcióban, <strong>készletről, azonnal vihetők</strong>. Az ár az alábbi felszereltséget is tartalmazza: ponyva, ponyvatartó keret, pódium, hátsó vonófej, hidraulika és világítás kivezetés.
+        </p>
+      </div>
+      <div class="machines-phone">
+        <div class="machines-phone-label">Gépértékesítés</div>
+        <a href="tel:+36306990624">+36 30 699 0624</a>
+      </div>
+    </div>
+
+    <div class="machine-list">
+
+      <!-- 1 -->
+      <article class="machine-card">
+        <div class="machine-media">
+          <img class="machine-photo" src="joskin-01.jpg" alt="JOSKIN TETRA-CAP 5025/19DR60" loading="lazy" onerror="this.classList.add('img-failed')">
+          <span class="machine-badge">Készletről</span>
+          <svg class="machine-placeholder" viewBox="0 0 240 120" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path d="M8 88 L70 80" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+            <circle cx="8" cy="88" r="5" stroke="currentColor" stroke-width="2.5"/>
+            <path d="M64 30 L210 30 L210 74 L64 74 Z" stroke="currentColor" stroke-width="2.5" stroke-linejoin="round"/>
+            <path d="M64 44 L210 44" stroke="currentColor" stroke-width="2"/>
+            <path d="M64 74 L210 74" stroke="currentColor" stroke-width="2.5"/>
+            <circle cx="150" cy="92" r="16" stroke="currentColor" stroke-width="2.5"/>
+            <circle cx="150" cy="92" r="6" stroke="currentColor" stroke-width="2.5"/>
+            <circle cx="188" cy="92" r="16" stroke="currentColor" stroke-width="2.5"/>
+            <circle cx="188" cy="92" r="6" stroke="currentColor" stroke-width="2.5"/>
+          </svg>
+        </div>
+        <div class="machine-body">
+          <div class="machine-brand">JOSKIN</div>
+          <h3 class="machine-name">TETRA-CAP 5025/19DR60</h3>
+          <p class="machine-spec">3 oldalra billenthető, forgózsámolyos pótkocsi</p>
+          <span class="machine-price-label">Akciós ár</span>
+          <div class="machine-price">8.999.000 Ft <span>+ ÁFA</span></div>
+          <div class="machine-actions">
+            <button type="button" class="machine-btn" onclick="csSelectMachine('TETRA-CAP 5025/19DR60')">Érdeklődöm</button>
+            <a class="machine-call" href="tel:+36306990624">+36 30 699 0624</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- 2 -->
+      <article class="machine-card">
+        <div class="machine-media">
+          <img class="machine-photo" src="joskin-02.jpg" alt="JOSKIN TETRA-CAP 6025/23DR160" loading="lazy" onerror="this.classList.add('img-failed')">
+          <span class="machine-badge">Készletről</span>
+          <svg class="machine-placeholder" viewBox="0 0 240 120" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path d="M8 88 L70 80" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+            <circle cx="8" cy="88" r="5" stroke="currentColor" stroke-width="2.5"/>
+            <path d="M58 24 L214 24 L214 74 L58 74 Z" stroke="currentColor" stroke-width="2.5" stroke-linejoin="round"/>
+            <path d="M58 40 L214 40" stroke="currentColor" stroke-width="2"/>
+            <path d="M58 57 L214 57" stroke="currentColor" stroke-width="2"/>
+            <circle cx="150" cy="92" r="16" stroke="currentColor" stroke-width="2.5"/>
+            <circle cx="150" cy="92" r="6" stroke="currentColor" stroke-width="2.5"/>
+            <circle cx="188" cy="92" r="16" stroke="currentColor" stroke-width="2.5"/>
+            <circle cx="188" cy="92" r="6" stroke="currentColor" stroke-width="2.5"/>
+          </svg>
+        </div>
+        <div class="machine-body">
+          <div class="machine-brand">JOSKIN</div>
+          <h3 class="machine-name">TETRA-CAP 6025/23DR160</h3>
+          <p class="machine-spec">3 oldalra billenthető, forgózsámolyos pótkocsi</p>
+          <span class="machine-price-label">Akciós ár</span>
+          <div class="machine-price">9.999.000 Ft <span>+ ÁFA</span></div>
+          <div class="machine-actions">
+            <button type="button" class="machine-btn" onclick="csSelectMachine('TETRA-CAP 6025/23DR160')">Érdeklődöm</button>
+            <a class="machine-call" href="tel:+36306990624">+36 30 699 0624</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- 3 -->
+      <article class="machine-card">
+        <div class="machine-media">
+          <img class="machine-photo" src="joskin-03.jpg" alt="JOSKIN DELTA-CAP 5025/19DR160" loading="lazy" onerror="this.classList.add('img-failed')">
+          <span class="machine-badge">Készletről</span>
+          <svg class="machine-placeholder" viewBox="0 0 240 120" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path d="M8 88 L70 80" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+            <circle cx="8" cy="88" r="5" stroke="currentColor" stroke-width="2.5"/>
+            <path d="M64 28 L212 28 L212 74 L64 74 Z" stroke="currentColor" stroke-width="2.5" stroke-linejoin="round"/>
+            <path d="M64 50 L212 50" stroke="currentColor" stroke-width="2"/>
+            <path d="M88 28 L88 74 M136 28 L136 74 M184 28 L184 74" stroke="currentColor" stroke-width="1.5" opacity="0.7"/>
+            <circle cx="150" cy="92" r="16" stroke="currentColor" stroke-width="2.5"/>
+            <circle cx="150" cy="92" r="6" stroke="currentColor" stroke-width="2.5"/>
+            <circle cx="188" cy="92" r="16" stroke="currentColor" stroke-width="2.5"/>
+            <circle cx="188" cy="92" r="6" stroke="currentColor" stroke-width="2.5"/>
+          </svg>
+        </div>
+        <div class="machine-body">
+          <div class="machine-brand">JOSKIN</div>
+          <h3 class="machine-name">DELTA-CAP 5025/19DR160</h3>
+          <p class="machine-spec">3 oldalra billenthető, forgózsámolyos pótkocsi</p>
+          <span class="machine-price-label">Akciós ár</span>
+          <div class="machine-price">10.999.000 Ft <span>+ ÁFA</span></div>
+          <div class="machine-actions">
+            <button type="button" class="machine-btn" onclick="csSelectMachine('DELTA-CAP 5025/19DR160')">Érdeklődöm</button>
+            <a class="machine-call" href="tel:+36306990624">+36 30 699 0624</a>
+          </div>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
 <!-- WHY US -->
 <section class="why">
   <div class="why-inner">
@@ -1924,6 +2271,7 @@
         <select name="MMERGE19" id="mce-MMERGE19" class="form-select" required>
           <option value="">Válassz…</option>
           <option value="Az egész akció érdekel">Az egész akció érdekel</option>
+          <option value="JOSKIN pótkocsi / gép">JOSKIN pótkocsi / gép</option>
           <option value="Kenőanyagok &amp; olajok">Kenőanyagok &amp; olajok (Dynatrans, Joskin, AdBlue...)</option>
           <option value="Gumiabroncsok">Ascenso gumiabroncsok</option>
           <option value="Elektromos alkatrészek">Elektromos alkatrészek (önindító, akku, érzékelő...)</option>
@@ -2007,6 +2355,17 @@
   updateCountdown();
   setInterval(updateCountdown, 1000);
 
+  // Gépajánlat "Érdeklődöm" – előválasztja a JOSKIN opciót és a kapcsolat-formhoz görget
+  window.csSelectMachine = function(model) {
+    const sel = document.getElementById('mce-MMERGE19');
+    if (sel) {
+      const opt = Array.from(sel.options).find(o => o.value === 'JOSKIN pótkocsi / gép');
+      if (opt) sel.value = opt.value;
+    }
+    const target = document.getElementById('final-cta');
+    if (target) target.scrollIntoView({ behavior: 'smooth' });
+  };
+
   // Filter pills interaction
   document.querySelectorAll('.filter-pill').forEach(pill => {
     pill.addEventListener('click', () => {
@@ -2034,7 +2393,7 @@
       }
     });
   }, { threshold: 0.1 });
-  document.querySelectorAll('.product-card, .why-card, .location-card').forEach(el => {
+  document.querySelectorAll('.product-card, .why-card, .location-card, .machine-card').forEach(el => {
     el.classList.add('fade-in');
     observer.observe(el);
   });
