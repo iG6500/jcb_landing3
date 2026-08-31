@@ -1575,7 +1575,7 @@
           </div>
           <div class="product-price-current">19.540 HUF <span class="product-price-vat">+ ÁFA</span></div>
           <div class="product-actions">
-            <button class="btn-card-primary" onclick="csSelectProduct('Szerszám &amp; emelés')">Kérem ezt</button>
+            <button class="btn-card-primary" onclick="csSelectProduct('Szerszám')">Kérem ezt</button>
             <button class="btn-card-icon" aria-label="Részletek">
               <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
                 <path d="M6 4L10 8L6 12" stroke="currentColor" stroke-width="2"/>
@@ -1705,7 +1705,7 @@
           </div>
           <div class="product-price-current">37.100 HUF <span class="product-price-vat">+ ÁFA</span></div>
           <div class="product-actions">
-            <button class="btn-card-primary" onclick="csSelectProduct('Szerszám &amp; emelés')">Kérem ezt</button>
+            <button class="btn-card-primary" onclick="csSelectProduct('Szerszám')">Kérem ezt</button>
             <button class="btn-card-icon" aria-label="Részletek">
               <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
                 <path d="M6 4L10 8L6 12" stroke="currentColor" stroke-width="2"/>
@@ -2182,11 +2182,11 @@
         <select name="MMERGE20" id="mce-MMERGE20" class="form-select" required>
           <option value="">Válassz…</option>
           <option value="Az egész akció érdekel">Az egész akció érdekel</option>
-          <option value="JOSKIN pótkocsi / gép">JOSKIN pótkocsi / SIROKO szóró</option>
+          <option value="JOSKIN pótkocsi / SIROKO">JOSKIN pótkocsi / SIROKO szóró</option>
           <option value="Kenőanyagok &amp; olajok">Kenőanyagok &amp; olajok</option>
           <option value="Gumiabroncsok">Ascenso gumiabroncsok</option>
                     <option value="Gépalkatrészek">Gépalkatrészek (klíma, világítás, tükör, KUHN kés...)</option>
-          <option value="Szerszám &amp; emelés">Szerszám (szerszámkészlet, sarokcsiszoló)</option>
+          <option value="Szerszám">Szerszám (szerszámkészlet, sarokcsiszoló)</option>
           <option value="Merch">JCB póló / bögre / merch</option>
           <option value="Egyéb - majd elmondom telefonon">Egyéb — majd elmondom telefonon</option>
         </select>
@@ -2272,7 +2272,7 @@
   window.csSelectMachine = function(model) {
     const sel = document.getElementById('mce-MMERGE20');
     if (sel) {
-      const opt = Array.from(sel.options).find(o => o.value === 'JOSKIN pótkocsi / gép');
+      const opt = Array.from(sel.options).find(o => o.value === 'JOSKIN pótkocsi / SIROKO');
       if (opt) sel.value = opt.value;
     }
     const target = document.getElementById('final-cta');
